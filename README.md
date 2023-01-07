@@ -1,16 +1,5 @@
-# food_delivery
+# food_delivery Output
+fully responsive
 
-A new Flutter project.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Food_Delivery](https://user-images.githubusercontent.com/99271821/211158159-69be878d-48cc-4906-91f2-c23904d94571.png)
