@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:food_delivery/screens/bottom_nav_controller/home/components/slider.dart';
 import 'package:food_delivery/screens/food_detail/details.dart';
 import 'package:food_delivery/screens/recommended_food_detail/recommended_food_detail.dart';
@@ -16,6 +17,20 @@ class FoodPageBody extends StatefulWidget {
 }
 
 class _FoodPageBodyState extends State<FoodPageBody> {
+  void goToWhiteView(){
+  changeSystemColor(Colors.blueGrey);
+  Get.to(() => FoodDetail())?.then((result){
+    changeSystemColor(Colors.black);
+  });
+}
+void changeSystemColor(Color color){
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    systemNavigationBarColor: color,
+    statusBarColor: color,
+    systemNavigationBarDividerColor: color,
+  ));
+}
+
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -24,7 +39,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
           children: [
             /// slider section
             GestureDetector(
-                onTap: () => Get.to(() => FoodDetail()), child: FoodSlider()),
+                onTap: () => goToWhiteView(), child: FoodSlider()),
 
             /// popular text
             SizedBox(height: Dimensions.h15 * 2),

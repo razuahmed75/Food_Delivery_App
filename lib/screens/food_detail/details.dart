@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:food_delivery/screens/food_detail/components/build_bottom_nav.dart';
 import 'package:food_delivery/screens/food_detail/components/food_introduction.dart';
 import 'package:get/get.dart';
@@ -8,7 +9,19 @@ import '../../widgets/app_icon.dart';
 
 class FoodDetail extends StatelessWidget {
   const FoodDetail({super.key});
-
+ void goToWhiteView(){
+  changeSystemColor(Colors.blueGrey);
+  Get.to(() => FoodDetail())?.then((result){
+    changeSystemColor(Colors.black);
+  });
+}
+void changeSystemColor(Color color){
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    systemNavigationBarColor: color,
+    statusBarColor: color,
+    systemNavigationBarDividerColor: color,
+  ));
+}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
